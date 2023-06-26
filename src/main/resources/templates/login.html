@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration and Login App</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">Registration and
+                Login Module</a>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <h1> User Login Page </h1>
+            <form id="loginForm" th:action="@{/login}" method="post">
+
+                <!-- error message -->
+                <div th:if="${param.error}">
+                    <div class="alert alert-danger">Invalid username or
+                        password.</div>
+                </div>
+
+                <!-- logout message -->
+                <div th:if="${param.logout}">
+                    <div class="alert alert-info">You have been logged out.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username"> Username </label> :
+                    <input type="text" class="form-control" id="username" name="username"
+                           placeholder="Enter Email ID" autofocus="autofocus">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>: <input type="password"
+                                                                   id="password" name="password" class="form-control"
+                                                                   placeholder="Enter Password"/>
+                </div>
+
+                <div class="g-recaptcha"
+                     data-sitekey="6LdXzPckAAAAAHnB7BDeiPpN2Ybeezu3wnPQ3waw">
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="button" name="login-submit" id="login-submit"
+                                   class="form-control btn btn-primary" value="Log In" onclick="validateForm()"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <input type="button" name="refresh" id="refresh"
+                                   class="form-control btn btn-default" value="Refresh" onclick="refreshForm()"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <span>New users? <a href="/" th:href="@{/registration}">Register
+                        here</a></span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script>
+    function validateForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var response = grecaptcha.getResponse();
+
+        if (username.trim() === '' || password.trim() === '') {
+            // Show the error notification
+            var errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger';
+            errorDiv.innerText = 'Please enter both username and password.';
+            var form = document.getElementById('loginForm');
+            form.insertBefore(errorDiv, form.firstChild);
+            return false;
+        }
+
+        if (response.length === 0) {
+            // Show the error notification
+            var errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger';
+            errorDiv.innerText = 'Please check the CAPTCHA checkbox!';
+            var form = document.getElementById('loginForm');
+            form.insertBefore(errorDiv, form.firstChild);
+            return false;
+        }
+
+        // Proceed with form submission if CAPTCHA is checked and fields are not empty
+        document.getElementById('loginForm').submit();
+    }
+
+    function refreshForm() {
+        // Clear the username and password fields
+        document.getElementById('username').value = '';
+        document.getElementById('password').value = '';
+
+        // Remove any error notifications
+        var errorDivs = document.getElementsByClassName('alert-danger');
+        while (errorDivs.length > 0) {
+            errorDivs[0].parentNode.removeChild(errorDivs[0]);
+        }
+
+        // Reset the reCAPTCHA widget
+        grecaptcha.reset();
+    }
+</script>
+</html>
+

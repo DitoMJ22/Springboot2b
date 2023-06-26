@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.19.1.final using JasperReports Library version 6.19.1-867c00bf88cd4d784d404379d6c05e1b419e8a4c  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PRG7" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19fde02f-0208-43ac-a4c4-1d98deddc78f">
+	<field name="idHelm" class="java.lang.Integer">
+	</field>
+	<field name="merk" class="java.lang.String">
+	</field>
+	<field name="warna" class="java.lang.String">
+	</field>
+	<field name="ukuran" class="java.lang.String">
+	</field>
+	<field name="stok" class="java.lang.Integer">
+	</field>
+	<field name="jenis" class="java.lang.String">
+	</field>
+	<field name="harga" class="java.lang.Integer">
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="68" splitType="Stretch">
+			<rectangle>
+				<reportElement x="30" y="0" width="460" height="68" forecolor="#5959CF" backcolor="#3915D6" uuid="e92efb75-7edf-465e-9051-3f822c1fff24"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="40" y="10" width="120" height="30" forecolor="#FFFFFF" uuid="36374750-7c25-4bc4-9a4f-537ef61e18f7"/>
+				<textElement>
+					<font size="19" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[LIST HELM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="350" y="20" width="140" height="30" forecolor="#FFFFFF" uuid="1d2cab98-6c6b-4c9f-90eb-9e7ff286e4a7"/>
+				<text><![CDATA[Praktikum Jasper Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="30" y="5" width="60" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="b26d9982-654e-4946-b118-efa9cc821f2d"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ID HELM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="90" y="5" width="100" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="b05189ac-bd73-4eb0-97ea-a02ed48f42eb"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[MERK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="190" y="5" width="70" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="d555528a-6ec1-40cd-9988-acb46c76a490"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Warna]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="260" y="5" width="50" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="a6c81cef-bd00-4fe6-b23c-a9c160dd9fa4"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ukuran]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="5" width="40" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="2d48b3f5-f45f-41b6-b470-bb8b974c793c"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Stok
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="350" y="5" width="70" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="66c0b91b-1c0c-4b7b-ae5a-6244c7cfe36a"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Jenis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="420" y="5" width="70" height="30" forecolor="#2272BD" backcolor="#E0E0E0" uuid="f50bd215-156b-4940-b591-25da0bcb2213"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Harga
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="1" width="60" height="19" uuid="5a14049f-8ae7-40a0-bad0-dc89404e6d69"/>
+				<textFieldExpression><![CDATA[$F{idHelm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="90" y="1" width="100" height="19" uuid="fb7f85b4-7283-4cde-8cd8-c38a0b9c5ed0"/>
+				<textFieldExpression><![CDATA[$F{merk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="1" width="70" height="19" uuid="3f112826-5729-457c-9608-a68fbad48136"/>
+				<textFieldExpression><![CDATA[$F{warna}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="1" width="50" height="19" uuid="b2f54408-601b-4dfb-b0fb-fee258e4b6da"/>
+				<textFieldExpression><![CDATA[$F{ukuran}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="1" width="40" height="19" uuid="0e89935f-6803-4aee-889a-f32dac7db4cc"/>
+				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="1" width="70" height="19" uuid="e2c19efb-74d7-4278-bbc0-288f877a8a4c"/>
+				<textFieldExpression><![CDATA[$F{jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="1" width="70" height="19" uuid="036ef196-3f00-4249-9d67-4c5bcf714141"/>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="30" y="0" width="460" height="18" backcolor="#EDEDED" uuid="861b928f-0a70-4403-bf74-acb9a8d87412"/>
+			</rectangle>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="40" y="1" width="100" height="16" uuid="2b73e3d6-e80a-49eb-b96e-f45e32a8760b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
